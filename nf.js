@@ -245,9 +245,12 @@ program
             value: envs[key]
           });
         }
+        //Q:20180315: UC Mod {
         envl.push({ key: 'PORT', value: conf.port });
+        envl.push({ key: 'FOREMAN_WORKER_ID', value: conf.number });
         envl.push({ key: 'FOREMAN_WORKER_NAME', value: conf.process + '.' + conf.number });
-
+        // }
+        
         conf.envs = envl;
 
         // Write the APP-PROCESS-N.conf File
