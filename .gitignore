@@ -1,4 +1,7 @@
+nbproject/private/
 node_modules
+._*
+**/.*
 generated-CHANGES.md
 test/sandbox
 foreman-*.tgz

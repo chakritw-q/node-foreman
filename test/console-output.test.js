@@ -6,6 +6,9 @@
 var assert = require('chai').assert;
 var util = require('util');
 var Console = require('../lib/console');
+//Q:20190320 {
+const colors = require('../lib/colors');
+// }
 
 var logs = { log: [], warn: [], error: [] };
 var logger = {
@@ -40,6 +43,11 @@ resetLogs();
 c.Error('such an error');
 assertLogged('error', /\[FAIL\]/);
 assertLogged('error', /such an error/);
+//Q:20190320 {
+let err = new Error('test error logging');
+c.Error(err);
+c.error('proc.1', { color: colors.red }, err);
+// }
 
 resetLogs();
 c.raw = true;
